@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="assets/ratchet/css/ratchet.min.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    
+<div id="wrapper">
+
+</div>
+
+<!-- HANDLEBAR TEMPLATES -->
+<!-- tutorial templates -->
+<script id="tutorial_get_started_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div scanning">
+
+		</div>
+
+    	<h3 class="text-center setup">Let&#39;s get Started</h3>
+    	<div class="btn_bottom">
+    		<a href="javascript:void(0);" id="tutorial_get_started" class="btn btn-block btn-primary btn_custom_orange">Get Started</a>
+    	</div>
+    </div>
+	
+</script>
+
+<script id="tutorial_find_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div scanning">
+
+		</div>
+
+    	<h3 class="text-center setup">Searching for your Lumens</h3>
+    	<div class="spinner">
+		  	<div class="rect1"></div>
+		  	<div class="rect2"></div>
+		  	<div class="rect3"></div>
+		  	<div class="rect4"></div>
+		  	<div class="rect5"></div>
+		</div>
+    </div>
+	
+</script>
+
+<script id="tutorial_found_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="loading_tutorial">
+	</div>
+	<div class="content-padded">
+		<div class="image_div found">
+
+		</div>
+	    <h3 class="text-center setup">Lumens Found!</h3>
+	    <div class="btn_bottom">
+	    	<a href="javascript:void(0);" id="tutorial_connect" data-device-id={{ id }} class="btn btn-block btn-positive btn_custom_connect">Connect</a>
+	    </div>
+	</div>
+</script>
+
+<script id="tutorial_not_found_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<h3 class="text-center setup">No Lumens Found</h3>
+    	<p class="text-center">Turn on Bluetooth<br>Wear your Lumens</p>
+    	<div class="btn_bottom">
+    		<a href="javascript:void(0);" id="find_tutorial" class="btn btn-block btn-primary btn_custom_try">Try Again</a>
+    	</div>
+    </div>
+</script>
+
+<script id="tutorial_setup_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div led_shoe">
+
+		</div>
+	    <h3 class="text-center setup">Let&#39;s setup your Lumens</h3>
+	    <p class="description">Multiple light panels make your Lumens customizable<p>
+	    <div class="btn_bottom">
+	    	<a href="javascript:void(0);" id="tutorial_customize" class="btn btn-block btn-positive btn_custom_connect">Choose Your Look</a>
+	    </div>
+	</div>
+</script>
+
+<script id="tutorial_customize_lumen_template" type="text/template">
+	{{> empty_header title="Choose a Look"}}
+	<div class="content-padded">
+		<div class="image_div customize_lumen customize_lumen_tutorial">
+
+		</div>
+		<div class="btn_bottom">
+			<ul class="table-view">
+				<li data-send-char="q" data-preset-val="1" class="table-view-cell media">
+					<a class="preset" id="preset_1">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Specter
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="w" data-preset-val="2" class="table-view-cell media">
+					<a class="preset" id="preset_2">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Green Glory
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="e" data-preset-val="3" class="table-view-cell media">
+					<a class="preset" id="preset_3">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Wisteria
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="r" data-preset-val="4" class="table-view-cell media">
+					<a class="preset" id="preset_4">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Devil in Disguise
+		      			</div>
+	      			</a>
+				</li>
+			</ul>
+		
+	    	<a href="javascript:void(0);" id="tutorial_customize_done" class="btn btn-block btn-positive btn_custom_connect">Next</a>
+	    </div>
+	</div>
+</script>
+
+<script id="tutorial_setup_notification_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div notify_shoe">
+
+		</div>
+		<h3 class="text-center setup">Receive Notifications</h3>
+    	<p class="description">Your Lumens notify you with pulsing lights and gentle vibrations</p>
+
+		<div class="btn_bottom">
+			<a href="javascript:void(0);" id="tutorial_notification" class="btn btn-block btn-positive btn_custom_orange">Next</a>
+	    </div>
+	</div>
+	
+</script>
+
+<script id="tutorial_notification_lumen_template" type="text/template">
+	{{> empty_header title="Select Notifcations"}}
+	<div class="content-padded">
+		<div class="image_div notify_lumen">
+
+		</div>
+
+		<div class="btn_bottom">
+	    	<ul class="table-view">
+				<li class="table-view-cell">
+		      		Twitter <button class="btn off twit_btn">Off</button>
+				</li>
+				<li class="table-view-cell">
+		      		Email <button class="btn off email_btn">Off</button>
+				</li>
+			</ul>
+		
+	    	
+	    	<a href="javascript:void(0);" id="tutorial_notification_done" class="btn btn-block btn-positive btn_custom_orange">Next</a>
+	    </div>
+	</div>
+</script>
+
+<script id="tutorial_no_internet_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<br><br>
+		<h3 class="text-center setup">No Internet</h3>
+    	<p class="text-center">You can setup notifications later</p>
+    	<div class="btn_bottom">
+	    	<a href="javascript:void(0);" id="tutorial_notification_done" class="btn btn-block btn-positive btn_custom_orange">Next</a>
+	    </div>
+    </div>
+</script>
+
+<script id="tutorial_done_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div fade_shoe">
+
+		</div>
+	    <h3 class="text-center setup">Oh and one more thing</h3>
+	    <p class="description">Your Lumens fade if you are inactive</p>
+	    <p class="description">Stay active. Show them off.</p>
+	    <div class="btn_bottom">
+	    	<a href="javascript:void(0);" id="tutorial_done" class="btn btn-block btn-positive btn_custom_connect">Finish</a>
+	    </div>
+	</div>
+</script>
+
+<script id="tutorial_paired_lumen_error_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<h3 class="text-center setup">Oops! Could not Connect</h3>
+    	<div class="btn_bottom">
+    		<a href="javascript:void(0);" data-device-id="" class="reconnect_tutorial btn btn-block btn-primary btn_custom_try">Try again</a>
+    	</div>
+    </div>
+
+</script>
+
+<!-- rest of the screens -->
+<script id="find_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div scanning">
+
+		</div>
+
+    	<h3 class="text-center setup">Searching for your Lumens</h3>
+    	<div class="spinner">
+		  	<div class="rect1"></div>
+		  	<div class="rect2"></div>
+		  	<div class="rect3"></div>
+		  	<div class="rect4"></div>
+		  	<div class="rect5"></div>
+		</div>
+    </div>	
+</script>
+
+<script id="found_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="loading">
+	</div>
+	<div class="content-padded">
+		<div class="image_div found">
+
+		</div>
+	    <h3 class="text-center setup">Lumens Found!</h3>
+	    <div class="btn_bottom">
+	    	<a href="javascript:void(0);" data-device-id={{ id }} class="connect btn btn-block btn-positive btn_custom_connect">Connect</a>
+	    </div>
+	</div>
+</script>
+
+<script id="not_found_lumen_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<h3 class="text-center setup">No Lumens Found</h3>
+    	<p class="text-center">Turn on Bluetooth<br>Wear your Lumens</p>
+    	<div class="btn_bottom">
+    		<a href="javascript:void(0);" id="find" class="btn btn-block btn-primary btn_custom_try">Try Again</a>
+    	</div>
+    </div>
+</script>
+
+<script id="home_lumen_template" type="text/template">
+	{{> home_header }}
+
+	<div class="content-padded">
+		<br>
+		<h3 class="text-center setup">Inactivity Monitor</h3>
+	    <div class="image_div inactivity_div">
+
+		</div>
+	    <div class="btn_bottom">
+		    <a href="javascript:void(0);" id="customize" class="btn btn-block btn-primary btn_custom_orange">Customize Your Lumen</a>
+		    <a href="javascript:void(0);" id="notification" class="btn btn-block btn-positive btn_custom_green">Set Notifications</a>
+		</div>
+    </div>
+</script>
+
+<script id="settings_lumen_template" type="text/template">
+	{{> back_header title="Settings"}}
+
+	<div class="content-padded">
+		<br>
+		<h3 class="text-center setup">Settings/About</h3>
+		<div class="btn_bottom">
+    		<a href="javascript:void(0);" class="tutorial btn btn-block btn-primary btn_custom_connect">Turn Lights Off</a>
+    	</div>
+    </div>
+</script>
+
+<script id="tutorial_lumen_template" type="text/template">
+	<div class="content">
+	<div class="slider" id="mySlider">
+	    <div class="slide-group">
+	    	<div class="slide">
+		      	<img src="./assets/images/tut1.jpg" width="320">
+		      	<span class="slide-text">
+		        	<span class="icon icon-left-nav"></span>
+		        	Slide
+		        	<div class="btn_bottom_tut">
+	      				<a href="javascript:void(0);" class="back_to_home btn btn-block btn-primary btn_custom_orange">Done</a>
+	      			</div>
+	      		</span>     		
+	    	</div>
+		    <div class="slide">
+		      	<img src="./assets/images/tut2.jpg" width="320">		      
+	    	</div>
+		    <div class="slide">
+		      	<img src="./assets/images/tut3.jpg" width="320">
+	    	</div>
+	  	</div>
+	</div>
+	</div>
+</script>
+
+<script id="paired_lumen_error_template" type="text/template">
+	{{> empty_header }}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<h3 class="text-center setup">Oops! Could not Connect</h3>
+    	<div class="btn_bottom">
+    		<a href="javascript:void(0);" data-device-id="" class="reconnect btn btn-block btn-primary btn_custom_try">Try again</a>
+    	</div>
+    </div>
+
+</script>
+
+
+<script id="customize_lumen_template" type="text/template">
+	{{> back_header title="Customize Your Lumen"}}
+
+	<div class="content-padded">
+		<div class="image_div customize_lumen">
+
+		</div>
+		<div class="btn_bottom">
+			<ul class="table-view">
+				<li data-send-char="q" data-preset-val="1" class="table-view-cell media">
+					<a class="preset" id="preset_1">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Specter
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="w" data-preset-val="2" class="table-view-cell media">
+					<a class="preset" id="preset_2">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Green Glory
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="e" data-preset-val="3" class="table-view-cell media">
+					<a class="preset" id="preset_3">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Wisteria
+		      			</div>
+	      			</a>
+				</li>
+				<li data-send-char="r" data-preset-val="4" class="table-view-cell media">
+					<a class="preset" id="preset_4">
+						<span class="media-object pull-right icon"></span>
+		      			<div class="media-body">
+		        			Devil in Disguise
+		      			</div>
+	      			</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</script>
+
+<script id="notify_lumen_template" type="text/template">
+	{{> back_header title="Set Notifications"}}
+
+	<div class="content-padded">
+		<div class="image_div notify_lumen">
+
+		</div>
+		<div class="btn_bottom">
+			<ul class="table-view">
+				<li class="table-view-cell">
+		      		Twitter <button class="btn off twit_btn">Off</button>
+				</li>
+				<li class="table-view-cell">
+		      		Email <button class="btn off email_btn">Off</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+</script>
+
+<script id="no_internet_template" type="text/template">
+	{{> back_header title="No Connectivity"}}
+	<div class="content-padded">
+		<div class="image_div not_found">
+
+		</div>
+		<br><br>
+		<h3 class="text-center setup">No Connectivity</h3>
+    	<p class="text-center">Notifications wont work</p>
+    </div>
+</script>
+
+
+<!-- include javascript libraries -->
+
+<script src="cordova.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/fastclick.js"></script>
+<script src="lib/handlebarsv3.js"></script>
+<script src="lib/ratchet.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

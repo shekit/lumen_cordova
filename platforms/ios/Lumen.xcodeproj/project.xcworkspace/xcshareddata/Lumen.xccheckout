@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>40EBBCDD-7BA1-44D1-8E60-F3B38501B1D9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Lumen</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91E60B15E976867E9B7863E30B049849DFE27C93</key>
+		<string>https://github.com/shekit/lumen.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/Lumen.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91E60B15E976867E9B7863E30B049849DFE27C93</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shekit/lumen.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91E60B15E976867E9B7863E30B049849DFE27C93</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91E60B15E976867E9B7863E30B049849DFE27C93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lumen</string>
+		</dict>
+	</array>
+</dict>
+</plist>
